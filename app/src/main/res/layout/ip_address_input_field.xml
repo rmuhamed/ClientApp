@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_8"
+    android:orientation="horizontal"
+    android:weightSum="1">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_56"
+        android:layout_weight="0.25"
+        android:ems="3"
+        tool:text="128"
+        android:textSize="@dimen/sp_25"
+        android:layout_marginEnd="@dimen/dp_2"
+        android:gravity="center"
+        android:singleLine="true" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp_8"
+        android:layout_height="@dimen/dp_8"
+        android:layout_gravity="center"
+        android:hint="@string/ip_pattern"
+        android:src="@drawable/dot_shape"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginStart="@dimen/dp_2"
+        android:layout_marginEnd="@dimen/dp_2"
+        android:layout_weight="0.25"
+        android:ems="3"
+        android:gravity="center"
+        android:singleLine="true"
+        tool:text="456"
+        android:hint="@string/ip_pattern"
+        android:textSize="@dimen/sp_25" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp_8"
+        android:layout_height="@dimen/dp_8"
+        android:layout_gravity="center"
+        android:src="@drawable/dot_shape"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginStart="@dimen/dp_2"
+        android:layout_marginEnd="@dimen/dp_2"
+        android:layout_weight="0.25"
+        android:ems="4"
+        android:textSize="@dimen/sp_25"
+        android:gravity="center"
+        android:hint="@string/ip_pattern"
+        android:singleLine="true" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp_8"
+        android:layout_height="@dimen/dp_8"
+        android:layout_gravity="center"
+        android:src="@drawable/dot_shape"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginStart="@dimen/dp_2"
+        android:hint="@string/ip_pattern"
+        android:layout_weight="0.25"
+        android:ems="4"
+        android:textSize="@dimen/sp_25"
+        android:gravity="center"
+        android:singleLine="true" />
+</androidx.appcompat.widget.LinearLayoutCompat>

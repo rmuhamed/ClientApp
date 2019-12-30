@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Client app</string>
+    <string name="save">save</string>
+    <string name="cancel">Cancel</string>
+    <string name="ip_pattern">nnn</string>
+
+    <string name="retrieve_info_from_provider">Fetch data</string>
+    <string name="add_new_a_param">New Param</string>
+    <string name="update_a_param">Update param</string>
+    <string name="password_here">password goes here …</string>
+    <string name="password_required">This action requires password</string>
+    <string name="ok">OK</string>
+    <string name="demo_options">Options available to try</string>
+    <string name="show_a_param">Show param</string>
+    <string name="format">Format</string>
+    <string name="name">Name</string>
+    <string name="creation_success">Successfully created</string>
+    <string name="creation_error">An error occurred during creation</string>
+    <string name="params_added">Params added</string>
+</resources>
