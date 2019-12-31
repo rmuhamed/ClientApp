@@ -33,7 +33,7 @@ class ParamListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val paramsAdapter = ParamListAdapter(repository.all())
+        val paramsAdapter = ParamListAdapter(repository.all().get())
 
         view.findViewById<RecyclerView>(R.id.param_list).apply {
             adapter = paramsAdapter

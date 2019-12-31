@@ -2,7 +2,6 @@ package com.rmuhamed.params.app.client.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,7 +43,8 @@ class ParamAddNewFragment : Fragment() {
             val format = formatField.text.toString()
 
             val result = repository.add(ParamFactory.create(name, format))
-            if (result) {
+
+            if (result.get()) {
                 nameField.text.clear()
                 formatField.text.clear()
                 Snackbar.make(view, R.string.creation_success, Snackbar.LENGTH_SHORT).show()
