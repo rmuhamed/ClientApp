@@ -5,7 +5,7 @@
     <string name="ip_pattern">nnn</string>
 
     <string name="retrieve_info_from_provider">Fetch data</string>
-    <string name="add_new_a_param">New Param</string>
+    <string name="add_a_new_param">New Param</string>
     <string name="update_a_param">Update param</string>
     <string name="password_here">password goes here …</string>
     <string name="password_required">This action requires password</string>

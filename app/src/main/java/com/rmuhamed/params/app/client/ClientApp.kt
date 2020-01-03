@@ -7,13 +7,17 @@ import com.rmuhamed.params.providerlibrary.repository.ContentProviderParameterRe
 import com.rmuhamed.params.providerlibrary.repository.ParameterRepository
 import java.util.concurrent.Executors
 
-class ClientApp : Application() {
+class ClientApp : Application(), IClientApp {
     lateinit var repository : ParameterRepository
     override fun onCreate() {
         super.onCreate()
 
         InputFieldContext.initialize()
 
+        setupRepository()
+    }
+
+    override fun setupRepository() {
         repository = ContentProviderParameterRepository(
             this.applicationContext,
             Executors.newFixedThreadPool(4),
