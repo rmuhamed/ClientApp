@@ -1,5 +1,7 @@
 # ClientApp
 
+[![Build Status](https://travis-ci.org/rmuhamed/PokeTest.svg?branch=master)](https://travis-ci.org/rmuhamed/ClientApp)
+
 ## Pre-requisites
 - You have a local .aar of **ProviderLib** or you're able to build it from its sources
 - You must have the **ProvideApp** up and running in order to interact with DB
