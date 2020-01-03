@@ -2,6 +2,7 @@ package com.rmuhamed.params.app.client.mock
 
 import com.rmuhamed.params.providerlibrary.Param
 import com.rmuhamed.params.providerlibrary.QueryObject
+import com.rmuhamed.params.providerlibrary.repository.ParamFactory
 import com.rmuhamed.params.providerlibrary.repository.ParameterRepository
 import java.util.concurrent.Callable
 import java.util.concurrent.ExecutorService
@@ -17,7 +18,9 @@ class MockContentProviderParameterRepository(private val executorService: Execut
     }
 
     override fun all(): Future<MutableList<Param>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return executorService.submit(Callable {
+           mutableListOf<Param>(ParamFactory.create("mock", "alphanumeric"))
+        })
     }
 
     override fun query(p0: QueryObject?): Future<MutableList<Param>> {
