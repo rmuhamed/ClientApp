@@ -31,7 +31,12 @@ class MockContentProviderParameterRepository(private val executorService: Execut
                ParamFactory.create("9", "numeric"),
                ParamFactory.create("10", "numeric"),
                ParamFactory.create("11", "numeric"),
-               ParamFactory.create("12", "numeric")
+               ParamFactory.create("12", "numeric"),
+               ParamFactory.create("13", "numeric"),
+               ParamFactory.create("14", "numeric"),
+               ParamFactory.create("15", "numeric"),
+               ParamFactory.create("16", "numeric"),
+               ParamFactory.create("17", "numeric")
            )
         })
     }

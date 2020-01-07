@@ -3,7 +3,9 @@ package com.rmuhamed.params.app.client.fragment
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.rmuhamed.params.app.client.R
@@ -32,12 +34,14 @@ class ParamListFragmentTest {
     @Test
     fun test_checkList() {
         onView(withId(R.id.param_list))
-            .check(matches(isDisplayed()))//Check how to scroll
+            .check(matches(isDisplayed()))
     }
 
     @Test
     fun test_checkListLength() {
         onView(withId(R.id.param_list))
-            .check(matches(hasChildCount(9)))
+            .perform(RecyclerViewActions.scrollToPosition<ParamListAdapter.ViewHolder>(16))
+        //TODO: check a good way to check length
+
     }
 }
