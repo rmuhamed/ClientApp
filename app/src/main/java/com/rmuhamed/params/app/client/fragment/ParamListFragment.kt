@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
-import com.rmuhamed.params.app.client.ClientApp
+import com.rmuhamed.params.app.client.FrameworkClientApp
 import com.rmuhamed.params.app.client.R
 import com.rmuhamed.params.providerlibrary.repository.ParameterRepository
 
@@ -27,7 +27,7 @@ class ParamListFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        repository = (activity?.application as ClientApp).repository
+        repository = (activity?.application as FrameworkClientApp).repository
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

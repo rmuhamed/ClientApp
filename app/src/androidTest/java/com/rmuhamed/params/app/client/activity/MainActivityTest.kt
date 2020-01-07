@@ -1,12 +1,11 @@
-package com.rmuhamed.params.app.client
+package com.rmuhamed.params.app.client.activity
 
-import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.rmuhamed.params.app.client.activity.MainActivity
+import com.rmuhamed.params.app.client.R
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,10 +22,18 @@ class MainActivityTest {
     }
 
     @Test
-    fun test_checkButtons() {
+    fun test_checkButtonsDisplayed() {
         onView(withText(R.string.retrieve_info_from_provider)).check(matches(isDisplayed()))
         onView(withText(R.string.add_a_new_param)).check(matches(isDisplayed()))
         onView(withText(R.string.update_a_param)).check(matches(isDisplayed()))
         onView(withText(R.string.show_a_param)).check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun test_checkButtonsClickable() {
+        onView(withText(R.string.retrieve_info_from_provider)).check(matches(isClickable()))
+        onView(withText(R.string.add_a_new_param)).check(matches(isClickable()))
+        onView(withText(R.string.update_a_param)).check(matches(isClickable()))
+        onView(withText(R.string.show_a_param)).check(matches(isClickable()))
     }
 }

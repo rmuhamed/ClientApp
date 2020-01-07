@@ -1,21 +1,13 @@
 package com.rmuhamed.params.app.client.runner
 
-import android.app.Application
-import com.rmuhamed.params.app.client.IClientApp
+import com.rmuhamed.params.app.client.FrameworkClientApp
 import com.rmuhamed.params.app.client.mock.MockContentProviderParameterRepository
 import com.rmuhamed.params.providerlibrary.repository.ParameterRepository
 import java.util.concurrent.Executors
 
-class MockClientApp: Application(), IClientApp {
-    lateinit var repository: ParameterRepository
+class MockClientApp: FrameworkClientApp() {
+    override fun configureInputField() {}
 
-    override fun onCreate() {
-        super.onCreate()
-
-        setupRepository()
-    }
-
-    override fun setupRepository() {
-        repository = MockContentProviderParameterRepository(Executors.newSingleThreadExecutor())
-    }
+    override fun initRepository(): ParameterRepository =
+        MockContentProviderParameterRepository(Executors.newSingleThreadExecutor())
 }
