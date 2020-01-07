@@ -4,12 +4,14 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.rule.ActivityTestRule
 import com.rmuhamed.params.app.client.R
 import com.rmuhamed.params.app.client.activity.MainActivity
+import org.hamcrest.core.Is.`is`
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -18,7 +20,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ParamListFragmentTest {
     @get:Rule
-    val activityRule = ActivityScenarioRule(MainActivity::class.java)
+    val activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Before
     fun setup() {
@@ -38,10 +40,18 @@ class ParamListFragmentTest {
     }
 
     @Test
-    fun test_checkListLength() {
+    fun test_checkScroll() {
         onView(withId(R.id.param_list))
+            .inRoot(RootMatchers.withDecorView(`is`(activityRule.activity.window.decorView)))
             .perform(RecyclerViewActions.scrollToPosition<ParamListAdapter.ViewHolder>(16))
-        //TODO: check a good way to check length
-
     }
+
+//    @Test
+//    fun test_checkItem() {
+//        onView(withId(R.id.param_list))
+//            .inRoot(RootMatchers.withDecorView(`is`(activityRule.activity.window.decorView)))
+//            .check(matches(RecyclerMatcherTextAt(6, allOf(withText("7 numeric"), isDisplayed()))))
+//    }
+
+
 }
